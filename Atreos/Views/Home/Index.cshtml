@@ -1,8 +1,44 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="~/css/login.css" />
+<link rel="stylesheet" href="~/Images/" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Atreos</p>
+<div class="login-bg">
+    <div class="icon-title">
+        <div class="image-login">
+            <img src="~/Images/logo.svg" />
+        </div>
+        <div class="logo-text">
+            <h1>ATREOS</h1>
+        </div>
+    </div>
+    <div class="ilustra-login">
+        <img src="~/Images/ilustracao_login.svg"/>
+    </div>
+    <div class="login-parag">
+        <p>
+            Aplicação responsável por centralizar a presença dos alunos da instituição
+        </p>
+    </div>
+</div>
+
+<div class="login-form">
+    <div class="instrucao-form">
+        
+        <h5>Entre com sua conta</h5>
+        <p>Prrencha os dados abaixo</p>
+        
+    </div>
+    <form class="dados">
+        <div class="RA">
+            <label>RA</label>
+            <input class="campo-ra" type="text" />
+        </div>
+        <div class="senha">
+            <label>Senha</label>
+            <input class="campo-senha" type="password" />
+        </div>
+        <a role="button" class="btn-acessar">Acessar</a>
+    </form>
 </div>
