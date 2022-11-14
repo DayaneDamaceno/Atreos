@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar Novo Aluno";
+}
+<link rel="stylesheet" href="~/css/cadastroAlunos.css" />
+<link rel="stylesheet" href="~/Images/" />
+
+<div class="cadastroAlunos-bg">
+    cadastrar alunos
+</div>
+
+<div class="titulo-subtitulo">
+    <h3>Insira um novo aluno</h3>
+    <p>Preencha os campos abaixo</p>
+</div>
+
+<div class="aluno-info">
+    <div class="aluno-foto">
+        <p>Foto do Aluno</p>
+        <img src="~/Images/foto-holder.svg" />
+    </div>
+
+    <div class="cadastroAlunos-nome">
+        <label>Nome Completo</label>
+        <input class="nome-cadastro" type="text" />
+    </div>
+
+    <div class="cadastroAlunos-RA">
+        <label>RA</label>
+        <input class="ra-cadastro" type="text" />
+    </div>
+
+    <div class="cadastroAlunos-turma">
+        <label>Turma</label>
+        <div class="turmaAluno-cadastro">
+            Selecione a turma
+            <img src="~/Images/chevron-down.svg" />
+        </div>
+    </div>
+</div>
+
+<a role="button" class="btn-cadastrarAluno"asp-controller="Atreos"asp-action="CadastroCracha">Cadastrar</a>

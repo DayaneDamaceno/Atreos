@@ -1,0 +1,276 @@
+﻿p {
+    margin: 0;
+}
+
+body {
+    width: auto;
+    height: auto;
+}
+
+.cadastroAlunos-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0px 48px;
+    gap: 240px;
+    position: absolute;
+    width: 186px;
+    height: 661px;
+    left: 0px;
+    top: 0px;
+    background: #222831;
+}
+
+.titulo-subtitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: absolute;
+    left: 272px;
+    top: 99px;
+}
+
+titulo-subtitulo h3 {
+    width: 225px;
+    height: 29px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 120%;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+titulo-subtitulo p {
+    width: 227px;
+    height: 22px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: #000000;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/*INFO ALUNO*/
+
+.aluno-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    width: 368px;
+    height: 349px;
+    left: 272px;
+    top: 185px;
+}
+
+.aluno-foto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+    width: 100px;
+    height: 91px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+aluno-foto p {
+    width: 100px;
+    height: 19px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+aluno-foto img {
+    width: 60px;
+    height: 60px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.cadastroAlunos-nome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 368px;
+    height: 70px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+cadastroAlunos-nome label{
+    width: 115px;
+    height: 19px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.nome-cadastro {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 368px;
+    height: 39px;
+    background: #FFFFFF;
+
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.cadastroAlunos-RA {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 368px;
+    height: 70px;
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+cadastroAlunos-RA label{
+    width: 21px;
+    height: 19px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.ra-cadastro {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 368px;
+    height: 39px;
+    background: #FFFFFF;
+
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.cadastroAlunos-turma {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 368px;
+    height: 70px;
+
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+
+cadastroAlunos-turma label {
+    width: 47px;
+    height: 19px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.turmaAluno-cadastro {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 368px;
+    height: 39px;
+    background: #FFFFFF;
+
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.btn-cadastrarAluno {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    position: absolute;
+    width: 98px;
+    height: 35px;
+    left: 272px;
+    top: 560px;
+
+    background: #00ADB5;
+    border: 1.5px solid #00898F;
+    border-radius: 3px;
+}

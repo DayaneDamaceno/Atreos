@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Associar Cracha";
+}
+<link rel="stylesheet" href="~/css/cadastroCracha.css" />
+<link rel="stylesheet" href="~/Images/" />
+
+<div class="cracha-bg">
+    cadastrar cracha
+</div>
+
+<div class="titulo-subCracha">
+    <h3>Associe um crachá a um aluno</h3>
+    <p>Preencha os campos abaixo</p>
+</div>
+
+<div class="cracha-info">
+    <div class="cracha-aluno">
+        <label>Aluno</label>
+        <div class="crachaSelect-aluno">
+            Selecione o aluno
+            <img src="~/Images/chevron-down.svg" />
+        </div>
+    </div>
+
+    <div class="cracha-codigo">
+        <label>Código</label>
+        <input class="codigo-cracha" type="text" />
+    </div>
+</div>
+
+<a role="button" class="btn-cadastrarCracha"asp-controller="Atreos"asp-action="CadastroDisciplinas">Cadastrar</a>
