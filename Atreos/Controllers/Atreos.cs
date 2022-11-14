@@ -22,5 +22,10 @@ namespace Atreos.Controllers
         {
             return View();
         }
+
+        public IActionResult CadastroCracha()
+        {
+            return View();
+        }
     }
 }
