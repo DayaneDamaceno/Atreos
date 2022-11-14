@@ -17,5 +17,10 @@ namespace Atreos.Controllers
         {
             return View();
         }
+
+        public IActionResult CadastroAluno()
+        {
+            return View();
+        }
     }
 }
