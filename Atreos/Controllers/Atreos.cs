@@ -27,5 +27,10 @@ namespace Atreos.Controllers
         {
             return View();
         }
+
+        public IActionResult CadastroDisciplinas()
+        {
+            return View();
+        }
     }
 }
