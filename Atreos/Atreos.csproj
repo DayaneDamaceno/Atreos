@@ -13,4 +13,16 @@
     <Folder Include="wwwroot\Images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Login.cs" />
+  </ItemGroup>
+
 </Project>

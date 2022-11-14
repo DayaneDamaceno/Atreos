@@ -1,27 +1,61 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Atreos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cuprum&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/lib/boxicons/css/boxicons.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
 
 </head>
-<body>
-   
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+<body class="body-pd">
+<header class="header-top">
+    <div class="user-detail">
+        <h1>Eduardo Rosalem</h1>
+        <p>082200042</p>
     </div>
+    <div class="user-icon">
+        <img src="~/images/bxs-user.svg"/>
+    </div>
+</header>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+<nav class="nav-lateral">
+    <img class="nav-logo-name" src="images/logo-name.svg"/>
+    <a class="nav-item" id="pageInicio" asp-action="Index" asp-controller="Dashboard">
+        <i class="bx bx-home-alt"></i>
+        <span>Inicio</span>
+    </a>
+    <a class="nav-item" id="pageAluno" asp-action="Index" asp-controller="Aluno">
+        <i class="bx bx-user"></i>
+        <span>Alunos</span>
+    </a>
+    <a class="nav-item" id="pageCracha" >
+        <i class="bx bx-id-card"></i>
+        <span>Crachá</span>
+    </a>
+    <a class="nav-item" id="pageDisciplinas" >
+        <i class="bx bxs-collection"></i>
+        <span>Disciplinas</span>
+    </a>
+    <a class="nav-item">
+        <i class="bx bx-log-out"></i>
+        <span>Sair</span>
+    </a>
+</nav>
+
+<div class="h-100">
+    <main role="main" class="p-2">
+        @RenderBody()
+    </main>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
