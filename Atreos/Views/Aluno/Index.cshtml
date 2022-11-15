@@ -1,175 +1,82 @@
 ﻿@{
     ViewData["Title"] = "Alunos";
 }
-<link rel="stylesheet" href="~/css/alunos.css" />
+<link rel="stylesheet" href="~/css/alunos.css"/>
 <script src="js/pages/Alunos/Index.js"></script>
-
-
 
 <div class="aluno-novo">
     <h3>Alunos</h3>
-    <a role="button" class="btn-novoAluno" asp-controller="Atreos"asp-action="CadastroAluno">+ Adicionar novo Aluno</a>
+    <a role="button" class="btn btn-success" asp-controller="Aluno" asp-action="Cadastro">+ Adicionar novo Aluno</a>
 </div>
 
 <div class="filtros-aluno">
-    <div class="filtros-opcoes">
-        <div class="curso-ext">
-            <div class="curso-int">
-                <h5>Curso</h5>
-                <div class="curso-select">
-                    <label>Selecione o Curso</label>
-                    <img src="~/Images/chevron-down.svg" />
-                </div>
-            </div>
-        </div>
-        <div class="turma-filtro">
-            <h5>Turma</h5>
-            <div class="turma-select">
-                <label>Selecione a Turma</label>
-                <img src="~/Images/chevron-down.svg" />
-            </div>
-        </div>
+    <div class="w-50">
+        <label class="form-label">Curso</label>
+        <select class="form-select">
+            <option selected>Selecione um Curso</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
     </div>
-    <a role="button" class="filtro-botao">Buscar</a>
+    <div class="w-50">
+        <label class="form-label">Turma</label>
+        <select class="form-select">
+            <option selected>Selecione a Turma</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <a role="button" class="btn btn-primary">Buscar</a>
 </div>
 
 <div class="listagem">
-    <div class="elemento">
-        <div class="aluno">
+
+    <div class="card-aluno">
+        <div class="detalhes-container">
             <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg" />
+                <img src="~/Images/fotomodelo.svg"/>
             </div>
-            <div class="nome-ra">
-                <div class="nome-aluno">
+            <div class="aluno-detalhe">
+                <p>
                     Nome Exemplo
-                </div>
-                <div class="RA-aluno">
+                </p>
+                <span>
                     0822000XX
-                </div>
-            </div>
-            <div class="icones-acao">
-                <div class="editar-icon">
-                    <img src="~/Images/editaricon.svg" />
-                </div>
-                <div class="deletar-icon">
-                    <img src="~/Images/deletaricon.svg" />
-                </div>
+                </span>
             </div>
         </div>
-    </div>
-    <div class="elemento">
-        <div class="aluno">
-            <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg" />
-            </div>
-            <div class="nome-ra">
-                <div class="nome-aluno">
-                    Nome Exemplo
-                </div>
-                <div class="RA-aluno">
-                    0822000XX
-                </div>
-            </div>
-            <div class="icones-acao">
-                <div class="editar-icon">
-                    <img src="~/Images/editaricon.svg" />
-                </div>
-                <div class="deletar-icon">
-                    <img src="~/Images/deletaricon.svg" />
-                </div>
-            </div>
+        <div class="icones-acao">
+            <button class="btn-icon">
+                <i class='bx bx-edit-alt'></i>
+            </button>
+            <button class="btn-icon">
+                <i class='bx bx-trash'></i>
+            </button>
         </div>
     </div>
-    <div class="elemento">
-        <div class="aluno">
+    <div class="card-aluno">
+        <div class="detalhes-container">
             <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg" />
+                <img src="~/Images/fotomodelo.svg"/>
             </div>
-            <div class="nome-ra">
-                <div class="nome-aluno">
+            <div class="aluno-detalhe">
+                <p>
                     Nome Exemplo
-                </div>
-                <div class="RA-aluno">
+                </p>
+                <span>
                     0822000XX
-                </div>
-            </div>
-            <div class="icones-acao">
-                <div class="editar-icon">
-                    <img src="~/Images/editaricon.svg" />
-                </div>
-                <div class="deletar-icon">
-                    <img src="~/Images/deletaricon.svg" />
-                </div>
+                </span>
             </div>
         </div>
-    </div>
-    <div class="elemento">
-        <div class="aluno">
-            <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg" />
-            </div>
-            <div class="nome-ra">
-                <div class="nome-aluno">
-                    Nome Exemplo
-                </div>
-                <div class="RA-aluno">
-                    0822000XX
-                </div>
-            </div>
-            <div class="icones-acao">
-                <div class="editar-icon">
-                    <img src="~/Images/editaricon.svg" />
-                </div>
-                <div class="deletar-icon">
-                    <img src="~/Images/deletaricon.svg" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="elemento">
-        <div class="aluno">
-            <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg" />
-            </div>
-            <div class="nome-ra">
-                <div class="nome-aluno">
-                    Nome Exemplo
-                </div>
-                <div class="RA-aluno">
-                    0822000XX
-                </div>
-            </div>
-            <div class="icones-acao">
-                <div class="editar-icon">
-                    <img src="~/Images/editaricon.svg" />
-                </div>
-                <div class="deletar-icon">
-                    <img src="~/Images/deletaricon.svg" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="elemento">
-        <div class="aluno">
-            <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg" />
-            </div>
-            <div class="nome-ra">
-                <div class="nome-aluno">
-                    Nome Exemplo
-                </div>
-                <div class="RA-aluno">
-                    0822000XX
-                </div>
-            </div>
-            <div class="icones-acao">
-                <div class="editar-icon">
-                    <img src="~/Images/editaricon.svg" />
-                </div>
-                <div class="deletar-icon">
-                    <img src="~/Images/deletaricon.svg" />
-                </div>
-            </div>
+        <div class="icones-acao">
+            <button class="btn-icon">
+                <i class='bx bx-edit-alt'></i>
+            </button>
+            <button class="btn-icon">
+                <i class='bx bx-trash'></i>
+            </button>
         </div>
     </div>
 </div>

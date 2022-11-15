@@ -1,371 +1,74 @@
-﻿p {
-    margin: 0;
-}
-
-body {
-    width: auto;
-    height: auto;
-}
-
-.alunos-bg {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px 0px 48px;
-    gap: 240px;
-    position: absolute;
-    width: 186px;
-    height: 661px;
-    left: 0px;
-    top: 0px;
-    background: #222831;
-}
-
-/*NOVO ALUNO*/
-
+﻿
 .aluno-novo {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
-    /*gap: 798px;*/
-    position: absolute;
-    width: 962px;
-    height: 36px;
-    left: 234px;
-    top: 88px;
+   
 }
 
-aluno novo h3 {
-    width: 79px;
-    height: 36px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 150%;
 
-    text-align: center;
-    letter-spacing: -0.019em;
-    color: #000000;
-}
 
-.btn-novoAluno {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 6px 12px;
-    gap: 4px;
-    width: 211px;
-    height: 36px;
-
-    background: #28A745;
-
-    border: 1.5px solid #22863A;
-    border-radius: 3px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
 
 /*FILTROS*/
 
 .filtros-aluno {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: flex-end;
-    padding: 0px;
-    gap: 48px;
-    position: absolute;
-    width: 962px;
-    height: 75px;
-    left: 234px;
-    top: 131px;
-}
-
-.filtros-opcoes {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
     gap: 16px;
-    width: 588px;
-    height: 75px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
-.curso-ext {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 16px;
-    width: 286px;
-    height: 75px;
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.curso-int {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 4px;
-    width: 286px;
-    height: 75px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-curso-int h5 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-
-    text-align: center;
-    letter-spacing: -0.019em;
-    color: #000000;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.curso-select{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-    width: 286px;
-    height: 44px;
-    background: #FFFFFF;
-    border: 1px solid #E1E4E8;
-    border-radius: 3px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-.turma-filtro {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 4px;
-    width: 286px;
-    height: 75px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-turma-filtro h5 {
-    width: 53px;
-    height: 27px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 150%;
-
-    text-align: center;
-    letter-spacing: -0.019em;
-    color: #000000;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.turma-select {
-    box-sizing: border-box;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    gap: 10px;
-    width: 286px;
-    height: 44px;
-    background: #FFFFFF;
-
-    border: 1px solid #E1E4E8;
-    border-radius: 3px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-.filtro-botao {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 16px;
-    gap: 10px;
-    width: 85px;
-    height: 42px;
-
-    background: #00ADB5;
-    border: 1.5px solid #00898F;
-    border-radius: 3px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
 
 /*LISTAGEM*/
 
 .listagem {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 0px;
     gap: 14px;
-    position: absolute;
-    width: 962px;
-    height: 430px;
-    left: 234px;
-    top: 226px;
+    width: 100%;
+    margin: 14px 0;
 }
 
-.elemento {
+.card-aluno {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 16px;
     gap: 12px;
-    width: 962px;
-    height: 60px;
-    background: #FFFFFF;
+    width: 100%;
+    background-color: #FFFFFF;
     border-radius: 3px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.aluno {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 12px;
-    width: 186px;
-    height: 40px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    border: 1px solid #E1E4E8;
 }
 
 .foto-aluno {
     width: 40px;
-    height: 40px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
-.nome-ra {
+.detalhes-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    width: 134px;
-    height: 36px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    align-items: center;
+    gap: 12px;
 }
-
-.nome-aluno {
-    width: 134px;
-    height: 19px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
-}
-
-.RA-aluno {
-    width: 79px;
-    height: 17px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
+.aluno-detalhe span{
     font-size: 14px;
-    line-height: 17px;
-
     color: #586069;
 }
+
+
 
 .icones-acao {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 0px;
     gap: 10px;
-    width: 58px;
-    height: 24px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
-.editar-icon {
-    box-sizing: border-box;
+
+
+.button-icon {
     width: 24px;
     height: 24px;
-    background: #FFFFFF;
-    /* Secondary/Gray/gray-300 */
-
-    border: 1px solid #D1D5DA;
-    border-radius: 25px;
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-}
-
-.deletar-icon {
-    box-sizing: border-box;
-    width: 24px;
-    height: 24px;
-    /* Secondary/Gray/gray-300 */
-
     border: 1px solid #D1D5DA;
     border-radius: 50px;
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }

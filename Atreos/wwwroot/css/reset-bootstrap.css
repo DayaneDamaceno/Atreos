@@ -1,0 +1,34 @@
+.btn-primary.disabled, .btn-primary:disabled {
+    background-color: #00ADB5;
+    border: 1.5px #00898F solid;
+    color: #FFFFFF;
+}
+.btn-primary {
+    color: #FFFFFF;
+    background-color: #00ADB5;
+    border: 1.5px #00898F solid;
+    border-radius: 3px;
+}
+.btn-primary:hover {
+     background-color: #00898F;
+     border: 1.5px #00898F solid;
+ }
+
+.btn-primary:focus {
+     background-color: #00898F;
+     border: 1.5px #00898F solid;
+     box-shadow: 0 0 0 0.25rem #FFFFFF;
+ }
+
+
+.btn-icon{
+    width: 45px;
+    height: 45px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DA;
+    font-size: 24px;
+}
