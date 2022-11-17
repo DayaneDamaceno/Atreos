@@ -1,0 +1,11 @@
+﻿.background-login{
+    position: absolute;
+    width: 569px;
+    height: 661px;
+    left: 0px;
+    top: 0px;
+
+    /* Primary/primary-dark */
+
+    background: #222831;
+}

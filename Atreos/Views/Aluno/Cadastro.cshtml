@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar Novo Aluno";
+}
+<link rel="stylesheet" href="~/css/cadastroAlunos.css"/>
+
+
+<h3>Insira um novo aluno</h3>
+<p>Preencha os campos abaixo</p>
+
+<div  class="w-100 d-flex flex-column gap-2 my-2">
+    <div class="aluno-foto">
+        <p>Foto do Aluno</p>
+        <img src="~/Images/foto-holder.svg"/>
+    </div>
+
+    <div class="w-50">
+        <label>Nome Completo</label>
+        <input type="text" class="form-control">
+    </div>
+    <div class="w-50">
+        <label>RA</label>
+        <input type="text" class="form-control">
+    </div>
+
+    <div class="w-50">
+        <label class="form-label">Turma</label>
+        <select class="form-select">
+            <option selected>Selecione uma Turma</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+</div>
+
+<a role="button" class="btn btn-primary">Cadastrar</a>

@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Associar Disciplina";
+}
+<link rel="stylesheet" href="~/css/cadastroDisciplinas.css"/>
+<script src="js/pages/Disciplinas/Index.js"></script>
+
+
+<h3>Associe uma disciplina a um curso</h3>
+<p>Preencha os campos abaixo</p>
+
+<div  class="w-100 d-flex flex-column gap-2 my-2">
+    <div class="w-50">
+        <label class="form-label">Curso</label>
+        <select class="form-select">
+            <option selected>Selecione um Curso</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="w-50">
+        <label class="form-label">Disciplina</label>
+        <select class="form-select">
+            <option selected>Selecione a Disciplina</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+</div>
+
+<a role="button" class="btn btn-primary">Cadastrar</a>

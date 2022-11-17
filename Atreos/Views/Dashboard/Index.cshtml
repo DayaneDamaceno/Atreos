@@ -1,0 +1,60 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+<link rel="stylesheet" href="~/css/dashboard.css" />
+<script src="js/pages/Dashboard/Index.js"></script>
+
+<div class="filtro-dashboard">
+    <h3>Filtros:</h3>
+    <div class="filtro-opcoes">
+        <div class="w-50">
+            <label class="form-label">Curso</label>
+            <select class="form-select">
+                <option selected>Selecione um Curso</option>
+                <option value="1">One</option> 
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="w-50">
+            <label class="form-label">Disciplina</label>
+            <select class="form-select">
+                <option selected>Selecione uma Disciplina</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="w-50">
+            <label>RA</label>
+            <input type="text" class="form-control">
+        </div>
+        <a role="button" class="btn btn-primary">Buscar</a>
+    </div>
+</div>
+
+<div class="dashboards-info">
+    <div class="grafico">
+        <h5>Frequência/dias dos alunos</h5>
+        <img src="~/Images/freq_dia.svg" />
+    </div>
+    <div class="barras">
+        <h5>Frequência por Disciplina</h5>
+        <img src="~/Images/barras.svg" />
+    </div>
+    <div class="media-horario">
+        <h5>Média do horário de entrada</h5>
+        <div class="horarios">
+            <div class="h-matutino">
+                <label>Periodo Matutino</label>
+                <h5>07:24</h5>
+            </div>
+            <div class="h-noturno">
+                <label>Periodo Noturno</label>
+                <h5>18:54</h5>
+            </div>
+        </div>
+    </div>
+</div>

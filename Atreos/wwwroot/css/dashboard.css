@@ -1,0 +1,119 @@
+﻿p {
+    margin: 0;
+}
+
+body {
+    width: auto;
+    height: auto;
+}
+
+
+.filtro-opcoes {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.grafico {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 12px;
+    position: absolute;
+    width: 526px;
+    height: 342px;
+    left: 236px;
+    top: 230px;
+    background: #FFFFFF;
+    border-radius: 3px;
+}
+
+.barras {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 359px;
+    height: 212px;
+    left: 775px;
+    top: 232px;
+    background: #FFFFFF;
+    border-radius: 3px;
+}
+
+.media-horario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    position: absolute;
+    width: 359px;
+    height: 119px;
+    left: 775px;
+    top: 453px;
+    background: #FFFFFF;
+    border-radius: 3px;
+}
+
+.horarios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    width: 339px;
+    height: 69px;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.h-matutino {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 4px;
+    width: 164.5px;
+    height: 69px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.h-noturno {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 4px;
+    width: 164.5px;
+    height: 69px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+}

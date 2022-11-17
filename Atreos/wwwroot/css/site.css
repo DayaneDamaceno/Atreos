@@ -1,1 +1,115 @@
 ﻿
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+h1, p{
+    margin: 0;
+}
+body, html{
+    font-family: 'Roboto';
+}
+
+body::-webkit-scrollbar {
+     width: 12px;
+ }
+
+body::-webkit-scrollbar-track {
+     background: #000000;
+ }
+
+body::-webkit-scrollbar-thumb {
+     background-color: #000000;
+     border-radius: 10px;
+     border: 3px solid #5a6268;
+ }
+
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
+a:link{
+    text-decoration: none!important;
+    color: white;
+}
+.header-top{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    box-shadow: 0 0 133px rgba(0, 0, 0, 0.07), 0 0 21px rgba(0, 0, 0, 0.035);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+.user-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.user-detail h1{
+    font-size: 16px;
+}
+
+.user-detail p{
+    font-size: 14px;
+    color: #586069;
+}
+
+.user-icon{
+    background: #F6F8FA;
+    border: 1px solid #C9D6DF;
+    border-radius: 100px;
+    padding: 8px;
+}
+
+.body-pd {
+    padding-left: calc(186px + 16px);
+    padding-top: 80px;
+    width: 90vw;
+}
+.nav-lateral{
+    width: 186px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #222831;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.nav-logo-name{
+    width: 100px;
+    padding: 16px 0;
+}
+.nav-item{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 6px;
+    width: 100%;
+    color: #6A737D;
+}
+.nav-item.active{
+    background: #2A323E;
+    border-left: 2px solid #00ADB5;
+    color: #00ADB5;
+    transition: border-left 2s;
+}
+.nav-item:hover{
+    color: #00ADB5;
+}

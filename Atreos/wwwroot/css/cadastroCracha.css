@@ -1,0 +1,185 @@
+﻿p {
+    margin: 0;
+}
+
+body {
+    width: auto;
+    height: auto;
+}
+
+.cracha-bg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0px 48px;
+    gap: 240px;
+    position: absolute;
+    width: 186px;
+    height: 661px;
+    left: 0px;
+    top: 0px;
+    background: #222831;
+}
+
+.titulo-subCracha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: absolute;
+
+    left: 272px;
+    top: 99px;
+}
+
+titulo-subCracha h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+titulo-subCracha p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+
+    color: #000000;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.cracha-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    width: 368px;
+    height: 156px;
+    left: 272px;
+    top: 180px;
+}
+
+.cracha-aluno {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 368px;
+    height: 70px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+cracha-aluno label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+
+    color: #000000;
+
+    flex: none;
+    order: 0;
+}
+
+.crachaSelect-aluno {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 368px;
+    height: 39px;
+    background: #FFFFFF;
+
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.cracha-codigo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 368px;
+    height: 70px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+cracha-codigo label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+
+    color: #000000;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.codigo cracha {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 368px;
+    height: 39px;
+    background: #FFFFFF;
+
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.btn-cadastrarCracha {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    position: absolute;
+    width: 98px;
+    height: 35px;
+    left: 272px;
+    top: 361px;
+
+    background: #00ADB5;
+    border: 1.5px solid #00898F;
+    border-radius: 3px;
+}
