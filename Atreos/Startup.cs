@@ -50,7 +50,7 @@ namespace Atreos
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Login}/{action=Index}/{id?}");
+                    pattern: "{controller=Dashboard}/{action=Index}/{id?}");
             });
         }
     }

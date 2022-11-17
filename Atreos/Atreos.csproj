@@ -40,10 +40,24 @@
     <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
+    <_ContentIncludedByDefault Remove="Views\Login\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Controllers\Login.cs" />
+    <Compile Remove="Views\Login\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\Login\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Login\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Login\**" />
   </ItemGroup>
 
 </Project>
