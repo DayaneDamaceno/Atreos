@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atreos.Infra.Helix", "Atreo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atreos.Service", "Atreos.Service\Atreos.Service.csproj", "{C9FBDB15-3288-40DA-9A1C-1EF0CBA43FB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atreos.Infra", "Atreos.Infra\Atreos.Infra.csproj", "{C4239ED4-81E1-4815-925C-906ECBEA1060}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C9FBDB15-3288-40DA-9A1C-1EF0CBA43FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9FBDB15-3288-40DA-9A1C-1EF0CBA43FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9FBDB15-3288-40DA-9A1C-1EF0CBA43FB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4239ED4-81E1-4815-925C-906ECBEA1060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4239ED4-81E1-4815-925C-906ECBEA1060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4239ED4-81E1-4815-925C-906ECBEA1060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4239ED4-81E1-4815-925C-906ECBEA1060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
