@@ -90,7 +90,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
       <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Atreos.Infra.Helix\Atreos.Infra.Helix.csproj" />
     </ItemGroup>
 
 </Project>
