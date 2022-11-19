@@ -17,7 +17,7 @@ namespace Atreos.Web.Repositories
       var p = new SqlParameter[]
       {
           new("id_aluno", model.Id),
-          // new("id_turma", model.IdTurma),
+          //new("id_turma", model.IdTurma),
           new("nome", model.Nome)
       };
       return p;
@@ -28,7 +28,7 @@ namespace Atreos.Web.Repositories
       var aluno = new AlunoViewModel()
       {
           Id = Convert.ToInt32(registro["id_aluno"]),
-          // IdTurma = Convert.ToInt32(registro["id_turma"]),
+          //IdTurma = Convert.ToInt32(registro["id_turma"]),
           Nome = registro["nome"].ToString()
       };
 

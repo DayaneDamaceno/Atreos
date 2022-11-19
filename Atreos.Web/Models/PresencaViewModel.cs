@@ -7,9 +7,9 @@ namespace Atreos.Web.Models
 {
     public class PresencaViewModel : PadraoViewModel
     {
+        public DisciplinaViewModel Disciplina { get; set; }
         public AlunoViewModel Aluno { get; set; }
-        public Disciplina_TurmaViewModel DisciplinaTurma { get; set; }
         public TotemViewModel Totem{ get; set; }
-        public DateTime Horario { get; set; }
+        public DateTime DataPresenca { get; set; }
     }
 }
