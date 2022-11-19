@@ -10,6 +10,7 @@ namespace Atreos.Infra.Helix.Models
     [BsonRepresentation(BsonType.ObjectId)]
     public string Id { get; set; } 
     
+    // [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
     public DateTime recvTime { get; set; } 
     public string attrName { get; set; } 
     public string attrType { get; set; } 
