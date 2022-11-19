@@ -17,11 +17,10 @@ namespace Atreos.Web.DAO
         protected override string SqlSelectId { get; set; } = "spSelect_Aluno";
         protected override SqlParameter[] CriaParametros(AlunoViewModel aluno)
         {
-            SqlParameter[] p = new SqlParameter[8];
+            SqlParameter[] p = new SqlParameter[2];
 
             p[0] = new SqlParameter("id_aluno", aluno.Id);
-            p[1] = new SqlParameter("id_turma", aluno.Turma.Id);
-            p[2] = new SqlParameter("nome", aluno.Nome);
+            p[1] = new SqlParameter("nome", aluno.Nome);
             return p;
         }
 
@@ -30,7 +29,6 @@ namespace Atreos.Web.DAO
             AlunoViewModel itemAluno = new AlunoViewModel();
 
             itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
-            itemAluno.Turma.Id = Convert.ToInt32(registro["id_turma"]);
             itemAluno.Nome = registro["nome"].ToString();
 
 
