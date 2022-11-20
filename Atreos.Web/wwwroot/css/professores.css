@@ -1,0 +1,73 @@
+﻿.professor-novo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+/*FILTROS*/
+
+.filtros-aluno {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+
+
+/*LISTAGEM*/
+
+.listagem {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    margin: 14px 0;
+}
+
+.card-professor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    gap: 12px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    border: 1px solid #E1E4E8;
+}
+
+.foto-aluno {
+    width: 40px;
+}
+
+.detalhes-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.professor-detalhe span {
+    font-size: 14px;
+    color: #586069;
+}
+
+
+
+.icones-acao {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #D1D5DA;
+    border-radius: 50px;
+}

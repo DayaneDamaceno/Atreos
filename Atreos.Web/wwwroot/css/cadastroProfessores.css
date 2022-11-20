@@ -1,0 +1,120 @@
+﻿p {
+    margin: 0;
+}
+
+body {
+    width: auto;
+    height: auto;
+}
+
+.titulo-subtitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    position: absolute;
+    left: 272px;
+    top: 99px;
+}
+
+titulo-subtitulo h3 {
+    width: 225px;
+    height: 29px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 24px;
+    line-height: 120%;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+titulo-subtitulo p {
+    width: 227px;
+    height: 22px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    color: #000000;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/*INFO ALUNO*/
+
+.professor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    position: absolute;
+    width: 368px;
+    height: 349px;
+    left: 272px;
+    top: 185px;
+}
+
+.cadastroProfessores-nome {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    width: 368px;
+    height: 70px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+cadastroProfessores-nome label {
+    width: 115px;
+    height: 19px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.nome-cadastro {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+    width: 368px;
+    height: 39px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DA;
+    border-radius: 3px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.btn-cadastrarProfessor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    position: absolute;
+    width: 98px;
+    height: 35px;
+    left: 272px;
+    top: 560px;
+    background: #00ADB5;
+    border: 1.5px solid #00898F;
+    border-radius: 3px;
+}

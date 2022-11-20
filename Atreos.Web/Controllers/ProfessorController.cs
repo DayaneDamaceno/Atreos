@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Atreos.Web.Controllers
 {
-    public class AlunoController : Controller
+    public class ProfessorController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-        
         public IActionResult Cadastro()
         {
             return View();
