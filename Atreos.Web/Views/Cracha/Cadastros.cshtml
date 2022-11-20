@@ -11,7 +11,8 @@
 </div>
 
 <div class="listagem">
-    @foreach (var item in Model){
+    @foreach (var item in Model)
+    {
         <div class="card-professor">
             <div class="detalhes-container">
                 <div class="professor-detalhe">
@@ -23,14 +24,26 @@
                     </span>
                 </div>
             </div>
-            <div class="icones-acao">
-                <a role="button" class="btn-icon" asp-controller="Cracha" asp-action="Editar" asp-route-id="@item.Id">
-                    <i class='bx bx-edit-alt'></i>
-                </a>
-                <button class="btn-icon">
-                    <i class='bx bx-trash'></i>
-                </button>
-            </div>
+            <form>
+                <div class="icones-acao">
+                    <!--
+                            <a role="button" class="btn-icon" asp-controller="Cracha" asp-action="Editar" asp-route-id="@item.Id">
+                                <i class='bx bx-edit-alt'></i>
+                            </a>
+                            <button class="btn-icon">
+                                <i class='bx bx-trash'></i>
+                            </button>
+                    -->
+                    <button class="btn-icon" asp-controller="Cracha" asp-action="Editar" asp-route-id="@item.Id">
+                        <i class='bx bx-edit'></i>
+                    </button>
+
+                    <button class="btn-icon" asp-controller="Cracha" asp-action="Deletar" asp-route-id="@item.Id">
+                        <i class='bx bx-trash'></i>
+                    </button>
+
+                </div>
+            </form>
         </div>
     }
 </div>

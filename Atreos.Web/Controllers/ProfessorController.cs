@@ -40,5 +40,13 @@ namespace Atreos.Web.Controllers
 
             return View("Index", salvar.List());
         }
+
+        public IActionResult Deletar(int id)
+        {
+            ProfessorDAO deletar = new ProfessorDAO();
+            deletar.Deletar(id);
+
+            return View("Index", deletar.List());
+        }
     }
 }

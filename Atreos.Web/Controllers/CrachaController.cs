@@ -67,6 +67,13 @@ namespace Atreos.Web.Controllers
             return View("Cadastros", atualizar.List());
         }
 
+        public IActionResult Deletar(int id)
+        {
+            CrachaDAO deletar = new CrachaDAO();
+            deletar.Deletar(id);
+
+            return View("Index", deletar.List());
+        }
 
     }
 }
