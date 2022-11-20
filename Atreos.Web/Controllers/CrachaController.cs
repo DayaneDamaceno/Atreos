@@ -49,9 +49,22 @@ namespace Atreos.Web.Controllers
             return View("Editar", cracha);
         }
 
-        public IActionResult Salvar()
+        public IActionResult Salvar(CrachaViewModel cracha)
         {
-            return View("Editar");
+            AlunoDAO ra = new AlunoDAO();
+            AlunoViewModel aluno = ra.CapturarRa(cracha.Aluno.RA);
+
+            CrachaDAO atualizar = new CrachaDAO();
+
+            if (aluno != null)
+            {
+                cracha.Aluno.Id = aluno.Id;
+                atualizar.Atualizar(cracha);
+
+            }
+
+
+            return View("Cadastros", atualizar.List());
         }
 
 

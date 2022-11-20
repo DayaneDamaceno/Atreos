@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Atreos.Web.DAO;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace Atreos.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            ProfessorDAO listar = new ProfessorDAO();
+
+            return View(listar.List());
         }
         public IActionResult Cadastro()
         {
