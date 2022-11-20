@@ -33,6 +33,8 @@ namespace Atreos.Web.DAO
             var itemAluno = new AlunoViewModel();
 
             itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
+            itemAluno.Nome = registro["nome"].ToString();
+            itemAluno.RA = registro["ra"].ToString();
             itemCracha.Id = Convert.ToInt32(registro["id_cracha"]);
             itemCracha.HexaDec = registro["cod_hexaDec"].ToString();
             itemCracha.Aluno = itemAluno;

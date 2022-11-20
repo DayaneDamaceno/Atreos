@@ -72,7 +72,7 @@ namespace Atreos.Web.Controllers
             CrachaDAO deletar = new CrachaDAO();
             deletar.Deletar(id);
 
-            return View("Index", deletar.List());
+            return View("Cadastros", deletar.List());
         }
 
     }
