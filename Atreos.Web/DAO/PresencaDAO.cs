@@ -20,23 +20,22 @@ namespace Atreos.Web.DAO
     {
       SqlParameter[] p = new SqlParameter[4];
 
-            p[0] = new SqlParameter("id", presenca.Id);
-            p[1] = new SqlParameter("id_disciplina", presenca.Disciplina.Id);
-            p[2] = new SqlParameter("id_aluno", presenca.Aluno.Id);
-            p[3] = new SqlParameter("id_totem", presenca.Totem.Id);
-            p[4] = new SqlParameter("data_presenca", presenca.DataPresenca);
-            return p;
-        }
+      p[0] = new SqlParameter("id_disciplina", presenca.Disciplina.Id);
+      p[1] = new SqlParameter("id_aluno", presenca.Aluno.Id);
+      p[2] = new SqlParameter("id_totem", presenca.Totem.Id);
+      p[3] = new SqlParameter("data_presenca", presenca.DataPresenca);
+      return p;
+    }
 
-        protected override PresencaViewModel MontaModel(DataRow registro)
-        {
-            PresencaViewModel itemPresenca = new PresencaViewModel();
+    protected override PresencaViewModel MontaModel(DataRow registro)
+    {
+      PresencaViewModel itemPresenca = new PresencaViewModel();
 
-            itemPresenca.Id = Convert.ToInt32(registro["id_presenca"]);
-            itemPresenca.Disciplina.Id = Convert.ToInt32(registro["id_disciplina"]);
-            itemPresenca.Aluno.Id = Convert.ToInt32(registro["id_aluno"]);
-            itemPresenca.Totem.Id = Convert.ToInt32(registro["id_totem"]);
-            itemPresenca.DataPresenca = Convert.ToDateTime(registro["data_presenca"]);
+      itemPresenca.Id = Convert.ToInt32(registro["id_presenca"]);
+      itemPresenca.Disciplina.Id = Convert.ToInt32(registro["id_disciplina"]);
+      itemPresenca.Aluno.Id = Convert.ToInt32(registro["id_aluno"]);
+      itemPresenca.Totem.Id = Convert.ToInt32(registro["id_totem"]);
+      itemPresenca.DataPresenca = Convert.ToDateTime(registro["data_presenca"]);
 
 
       return itemPresenca;
@@ -47,8 +46,8 @@ namespace Atreos.Web.DAO
       var helperDao = new HelperDAO();
 
       var presenca = helperDao
-                                      .SqlComandoQuery("select top(1) * " +
-                                               "from Presenca order by data_presenca desc");
+          .SqlComandoQuery("select top(1) * " +
+                           "from Presenca order by data_presenca desc");
 
       return presenca.Rows.Count > 0 ? MontaModel(presenca.Rows[0]) : null;
     }

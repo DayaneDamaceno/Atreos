@@ -30,13 +30,9 @@ namespace Atreos.Web.DAO
         protected override CrachaViewModel MontaModel(DataRow registro)
         {
             var itemCracha = new CrachaViewModel();
-
-            AlunoViewModel itemAluno = new AlunoViewModel();
+            var itemAluno = new AlunoViewModel();
 
             itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
-            itemAluno.RA = registro["ra"].ToString();
-            itemAluno.Nome = registro["nome"].ToString();
-
             itemCracha.Id = Convert.ToInt32(registro["id_cracha"]);
             itemCracha.HexaDec = registro["cod_hexaDec"].ToString();
             itemCracha.Aluno = itemAluno;
