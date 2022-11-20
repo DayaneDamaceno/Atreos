@@ -11,7 +11,7 @@ namespace Atreos.Web.DAO
     public class CrachaDAO : PadraoDAO<CrachaViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Cracha";
-        protected override string SqlInsert { get; set; } = "spInsert_Cracha);";
+        protected override string SqlInsert { get; set; } = "spInsert_Cracha";
         protected override string SqlUpdate { get; set; } = "spUpdate_Cracha";
         protected override string SqlDelete { get; set; } = "spDelete_Cracha";
         protected override string SqlSelectId { get; set; } = "spSelect_Cracha";

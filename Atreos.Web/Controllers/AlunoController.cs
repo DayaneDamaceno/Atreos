@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Atreos.Web.DAO;
+using Atreos.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +12,33 @@ namespace Atreos.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            AlunoDAO listar = new AlunoDAO();
+            
+            return View(listar.List());
         }
         
+        public IActionResult Cadastrar(AlunoViewModel aluno)
+        {
+            AlunoDAO cadastrar = new AlunoDAO();
+            cadastrar.Cadastrar(aluno);
+            return View("Index", cadastrar.List());
+        }
         public IActionResult Cadastro()
         {
-            return View();
+            return View("Cadastro");
         }
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
         {
-            return View();
+            AlunoDAO recuperar = new AlunoDAO();
+            
+            return View(recuperar.CapturarId(id));
+        }
+        public IActionResult Salvar(AlunoViewModel aluno)
+        {
+            AlunoDAO salvar = new AlunoDAO();
+            salvar.Atualizar(aluno);
+
+            return View("Index", salvar.List());
         }
     }
 }

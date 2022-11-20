@@ -11,7 +11,7 @@ namespace Atreos.Web.DAO
     public class PresencaDAO : PadraoDAO<PresencaViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Presenca";
-        protected override string SqlInsert { get; set; } = "spInsert_Presenca);";
+        protected override string SqlInsert { get; set; } = "spInsert_Presenca";
         protected override string SqlUpdate { get; set; } = "spUpdate_Presenca";
         protected override string SqlDelete { get; set; } = "spDelete_Presenca";
         protected override string SqlSelectId { get; set; } = "spSelect_Presenca";

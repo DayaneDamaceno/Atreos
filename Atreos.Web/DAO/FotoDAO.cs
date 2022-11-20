@@ -11,7 +11,7 @@ namespace Atreos.Web.DAO
     public class FotoDAO : PadraoDAO<FotoViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Foto";
-        protected override string SqlInsert { get; set; } = "spInsert_Foto);";
+        protected override string SqlInsert { get; set; } = "spInsert_Foto";
         protected override string SqlUpdate { get; set; } = "spUpdate_Foto";
         protected override string SqlDelete { get; set; } = "spDelete_Foto";
         protected override string SqlSelectId { get; set; } = "spSelect_Foto";

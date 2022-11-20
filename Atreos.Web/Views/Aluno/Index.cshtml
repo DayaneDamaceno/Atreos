@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<AlunoViewModel>
+@{
     ViewData["Title"] = "Alunos";
 }
 <link rel="stylesheet" href="~/css/alunos.css"/>
@@ -9,7 +10,8 @@
     <a role="button" class="btn btn-success" asp-controller="Aluno" asp-action="Cadastro">+ Adicionar novo Aluno</a>
 </div>
 
-<div class="filtros-aluno">
+<!--
+ <div class="filtros-aluno">
     <div class="w-50">
         <label class="form-label">Curso</label>
         <select class="form-select">
@@ -30,9 +32,13 @@
     </div>
     <a role="button" class="btn btn-primary">Buscar</a>
 </div>
+ -->
 
 <div class="listagem">
+    @foreach (var item in Model)
+    {
 
+   
     <div class="card-aluno">
         <div class="detalhes-container">
             <div class="foto-aluno">
@@ -40,15 +46,15 @@
             </div>
             <div class="aluno-detalhe">
                 <p>
-                    Nome Exemplo
+                    @item.Nome
                 </p>
                 <span>
-                    0822000XX
+                    @item.RA
                 </span>
             </div>
         </div>
         <div class="icones-acao">
-            <a role="button" class="btn-icon"asp-controller="Aluno"asp-action="Editar">
+            <a role="button" class="btn-icon" asp-controller="Aluno" asp-action="Editar?id=@item.Id">
                 <i class='bx bx-edit-alt'></i>
             </a>
             <button class="btn-icon">
@@ -56,27 +62,5 @@
             </button>
         </div>
     </div>
-    <div class="card-aluno">
-        <div class="detalhes-container">
-            <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg"/>
-            </div>
-            <div class="aluno-detalhe">
-                <p>
-                    Nome Exemplo
-                </p>
-                <span>
-                    0822000XX
-                </span>
-            </div>
-        </div>
-        <div class="icones-acao">
-            <button class="btn-icon">
-                <i class='bx bx-edit-alt'></i>
-            </button>
-            <button class="btn-icon">
-                <i class='bx bx-trash'></i>
-            </button>
-        </div>
-    </div>
+    }
 </div>

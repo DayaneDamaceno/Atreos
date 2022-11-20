@@ -11,7 +11,7 @@ namespace Atreos.Web.DAO
     public class ProfessorDAO : PadraoDAO<ProfessorViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Professor";
-        protected override string SqlInsert { get; set; } = "spInsert_Professor);";
+        protected override string SqlInsert { get; set; } = "spInsert_Professor";
         protected override string SqlUpdate { get; set; } = "spUpdate_Professor";
         protected override string SqlDelete { get; set; } = "spDelete_Professor";
         protected override string SqlSelectId { get; set; } = "spSelect_Professor";

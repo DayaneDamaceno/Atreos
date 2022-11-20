@@ -11,16 +11,18 @@ namespace Atreos.Web.DAO
     public class AlunoDAO : PadraoDAO<AlunoViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Aluno";
-        protected override string SqlInsert { get; set; } = "spInsert_Aluno);";
+        protected override string SqlInsert { get; set; } = "spInsert_Aluno";
         protected override string SqlUpdate { get; set; } = "spUpdate_Aluno";
         protected override string SqlDelete { get; set; } = "spDelete_Aluno";
         protected override string SqlSelectId { get; set; } = "spSelect_Aluno";
         protected override SqlParameter[] CriaParametros(AlunoViewModel aluno)
         {
-            SqlParameter[] p = new SqlParameter[2];
+            SqlParameter[] p = new SqlParameter[3];
 
-            p[0] = new SqlParameter("id_aluno", aluno.Id);
-            p[1] = new SqlParameter("nome", aluno.Nome);
+            p[0] = new SqlParameter("id", aluno.Id);
+            p[1] = new SqlParameter("ra", aluno.RA);
+            p[2] = new SqlParameter("nome", aluno.Nome);
+            
             return p;
         }
 
@@ -29,6 +31,7 @@ namespace Atreos.Web.DAO
             AlunoViewModel itemAluno = new AlunoViewModel();
 
             itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
+            itemAluno.RA = registro["ra"].ToString();
             itemAluno.Nome = registro["nome"].ToString();
 
 

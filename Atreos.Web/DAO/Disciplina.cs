@@ -11,7 +11,7 @@ namespace Atreos.Web.DAO
     public class Disciplina : PadraoDAO<DisciplinaViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Disciplina";
-        protected override string SqlInsert { get; set; } = "spInsert_Disciplina);";
+        protected override string SqlInsert { get; set; } = "spInsert_Disciplina";
         protected override string SqlUpdate { get; set; } = "spUpdate_Disciplina";
         protected override string SqlDelete { get; set; } = "spDelete_Disciplina";
         protected override string SqlSelectId { get; set; } = "spSelect_Disciplina";

@@ -11,7 +11,7 @@ namespace Atreos.Web.DAO
     public class TotemDAO : PadraoDAO<TotemViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Totem";
-        protected override string SqlInsert { get; set; } = "spInsert_Totem);";
+        protected override string SqlInsert { get; set; } = "spInsert_Totem";
         protected override string SqlUpdate { get; set; } = "spUpdate_Totem";
         protected override string SqlDelete { get; set; } = "spDelete_Totem";
         protected override string SqlSelectId { get; set; } = "spSelect_Totem";
