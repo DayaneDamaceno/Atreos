@@ -6,13 +6,14 @@
 
 <h3>Insira um novo professor</h3>
 <p>Preencha os campos abaixo</p>
-
-<div class="w-100 d-flex flex-column gap-2 my-2">
-    <div class="w-50">
-        <label>Nome Completo</label>
-        <input type="text" class="form-control">
+<form method="post" action="Cadastrar">
+    <div class="w-100 d-flex flex-column gap-2 my-2">
+        <div class="w-50">
+            <label>Nome Completo</label>
+            <input type="text" class="form-control" name="Nome">
+        </div>
     </div>
-</div>
 
-<a role="button" class="btn btn-secondary" asp-controller="Professor" asp-action="Index">Cadastrar</a>
-<a role="button" class="btn btn-primary" asp-controller="Professor" asp-action="Index">Voltar</a>
+    <input type="submit" class="btn btn-secondary" value="Cadastrar">
+    <a role="button" class="btn btn-primary" asp-controller="Professor" asp-action="Index">Voltar</a>
+</form>
