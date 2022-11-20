@@ -7,7 +7,7 @@
 <h3>Edite os dados do aluno</h3>
 <p>Preencha os campos abaixo</p>
 
-<form method="post" action="Salvar">
+<form>
     <input type="hidden" name="Id" value="@Model.Id" />
 
     <div class="w-100 d-flex flex-column gap-2 my-2">
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <input type="submit" class="btn btn-secondary" value="Salvar">
+    <button type="submit" class="btn btn-secondary" asp-controller="Aluno" asp-action="Salvar">Salvar</button>
     <a role="button" class="btn btn-primary" asp-controller="Aluno" asp-action="Index">Voltar</a>
 
 </form>

@@ -29,19 +29,29 @@ namespace Atreos.Web.DAO
 
         protected override CrachaViewModel MontaModel(DataRow registro)
         {
-            CrachaViewModel itemCracha = new CrachaViewModel();
-
-            AlunoViewModel itemAluno = new AlunoViewModel();
+            var itemCracha = new CrachaViewModel();
+            var itemAluno = new AlunoViewModel();
 
             itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
-            itemAluno.RA = registro["ra"].ToString();
-            itemAluno.Nome = registro["nome"].ToString();
-
             itemCracha.Id = Convert.ToInt32(registro["id_cracha"]);
             itemCracha.HexaDec = registro["cod_hexaDec"].ToString();
             itemCracha.Aluno = itemAluno;
 
             return itemCracha;
+        }
+        
+        public List<CrachaViewModel> ObterAlunosComPresencaPendente(List<string> crachas)
+        {
+            var helperDao = new HelperDAO();
+            var alunos = new List<CrachaViewModel>();
+
+            var sql = $"select * from Cracha where cod_hexaDec in ('{string.Join("','", crachas)}')";
+            var alunosTable = helperDao.SqlComandoQuery(sql);
+
+            if (alunosTable.Rows.Count <= 0) return null;
+            
+            alunos.AddRange(from DataRow registro in alunosTable.Rows select MontaModel(registro));
+            return alunos;
         }
     }
 }

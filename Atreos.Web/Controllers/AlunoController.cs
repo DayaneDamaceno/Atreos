@@ -29,13 +29,13 @@ namespace Atreos.Web.Controllers
         }
         public IActionResult Editar(int id)
         {
-            AlunoDAO recuperar = new AlunoDAO();
+            var recuperar = new AlunoDAO();
             
             return View(recuperar.CapturarId(id));
         }
         public IActionResult Salvar(AlunoViewModel aluno)
         {
-            AlunoDAO salvar = new AlunoDAO();
+            var salvar = new AlunoDAO();
             salvar.Atualizar(aluno);
 
             return View("Index", salvar.List());

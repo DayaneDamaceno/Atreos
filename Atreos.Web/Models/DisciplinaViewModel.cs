@@ -7,10 +7,16 @@ namespace Atreos.Web.Models
 {
     public class DisciplinaViewModel : PadraoViewModel
     {
+
         public ProfessorViewModel Professor { get; set; }
         public string Nome { get; set; }
         public DateTime Horario { get; set; }
         public string DiaSemana{ get; set; }
         public int TotalAulas{ get; set; }
+        
+        public DisciplinaViewModel()
+        {
+            Professor = new ProfessorViewModel();
+        }
     }
 }

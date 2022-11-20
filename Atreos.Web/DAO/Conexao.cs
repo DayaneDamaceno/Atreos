@@ -10,10 +10,8 @@ namespace Atreos.Web.DAO
     {
         public SqlConnection GetConexao()
         {
-            string banco = "Server=localhost;Database=SQL;Trusted_Connection=True;";
-            //login = "Data Source=atum.database.windows.net; Database=SQL; user id=atumm; password=";
-
-            SqlConnection con = new SqlConnection(banco);
+            var banco = "Server=atum.database.windows.net;uid=atumm;pwd=1bfd02c92*;database=SQL";
+            var con = new SqlConnection(banco);
             con.Open();
 
             return con;

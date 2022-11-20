@@ -83,6 +83,7 @@
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\js\bootstrap.js.map" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\js\bootstrap.min.js" />
       <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\js\bootstrap.min.js.map" />
+      <_ContentIncludedByDefault Remove="Views\Disciplina\Cadastro.cshtml" />
     </ItemGroup>
 
     <ItemGroup>

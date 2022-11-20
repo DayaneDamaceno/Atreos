@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Atreos.Web.DAO
 {
-    public class Disciplina : PadraoDAO<DisciplinaViewModel>
+    public class DisciplinaDAO : PadraoDAO<DisciplinaViewModel>
     {
         protected override string SqlSelect { get; set; } = "spSelect_Disciplina";
         protected override string SqlInsert { get; set; } = "spInsert_Disciplina";
@@ -45,6 +45,46 @@ namespace Atreos.Web.DAO
 
 
             return itemDisciplina;
+        }
+
+        public DisciplinaViewModel ObterDisciplinaAtual()
+        {
+            // var now = new TimeSpan(22, 30, 45);
+            var now = DateTime.Now.TimeOfDay;
+            // var startFirstClass = TimeSpan.Parse("19:15:00.000");
+            // var endFirstClass = TimeSpan.Parse("20:55:00.000");
+            // var startSecondClass = TimeSpan.Parse("21:05:00.000");
+            // var endSecondClass = TimeSpan.Parse("22:45:00.000");
+
+            var startFirstClass = TimeSpan.Parse("13:00:00.000");
+            var endFirstClass = TimeSpan.Parse("19:00:00.000");
+            var startSecondClass = TimeSpan.Parse("21:05:00.000");
+            var endSecondClass = TimeSpan.Parse("22:45:00.000");
+            
+            var nowIsFirstClass = now > startFirstClass && now < endFirstClass;
+            var nowIsSecondClass = now > startSecondClass && now < endSecondClass;
+            if (nowIsFirstClass)
+            {
+                return ObterDisciplina(startFirstClass, endFirstClass);
+            }
+            if (nowIsSecondClass)
+            {
+                return ObterDisciplina(startSecondClass, endSecondClass);
+            }
+
+            return null;
+
+        }
+
+        private DisciplinaViewModel ObterDisciplina(TimeSpan startTime, TimeSpan endTime)
+        {
+            var helperDao = new HelperDAO();
+
+            var sql = $"select * from Disciplina " +
+                      $"where horario  BETWEEN '{startTime}'AND '{endTime}'";
+            var disciplina = helperDao.SqlComandoQuery(sql);
+
+            return disciplina.Rows.Count > 0 ? MontaModel(disciplina.Rows[0]) : null;
         }
     }
 }
