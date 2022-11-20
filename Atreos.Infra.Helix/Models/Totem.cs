@@ -8,13 +8,11 @@ namespace Atreos.Infra.Helix.Models
   {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
-    public string Id { get; set; } 
-    
-    // [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
+    public string Id { get; set; }
     public DateTime recvTime { get; set; } 
     public string attrName { get; set; } 
     public string attrType { get; set; } 
-    public string attrValue { get; set; } 
+    public string attrValue { get; set; }
     
     // _id 
     // recvTime 2022-11-17T17:00:53.510+00:00

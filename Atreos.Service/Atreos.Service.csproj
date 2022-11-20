@@ -11,5 +11,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Atreos.Infra.Helix\Atreos.Infra.Helix.csproj" />
+      <ProjectReference Include="..\Atreos.Infra\Atreos.Infra.csproj" />
     </ItemGroup>
 </Project>

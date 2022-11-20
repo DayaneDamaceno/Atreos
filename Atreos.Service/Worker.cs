@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Atreos.Infra;
 using Atreos.Infra.Helix;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -23,10 +24,12 @@ namespace Atreos.Service
       while (!stoppingToken.IsCancellationRequested)
       {
         _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-        var totemRepository = new TotemRepository();
-        var totens = await totemRepository.GetAllTotems();
         
-        _logger.LogInformation("Quantidade: {c}", totens.Count);
+        var presencaService = new PresencaService();
+        
+        await presencaService.RegistrarPresencas();
+
+        _logger.LogInformation("Chegou ao fim");
         await Task.Delay(5000, stoppingToken);
       }
     }

@@ -11,15 +11,16 @@ namespace Atreos.Infra.Helix
   {
     private const string TotemCollection = "sth_/_urn:ngsi-ld:totem:070_iot";
     
-    public async Task<List<Totem>> GetAllTotems()
+    public async Task<List<Totem>> GetAllTotemsFromDate(DateTime dateTimeStart)
     {
       var mongoConnection = new MongoDbConnection();
       var totemCollection = mongoConnection.Connect<Totem>(TotemCollection);
-      
+
+      var dateFilter = DateTime.SpecifyKind(dateTimeStart, DateTimeKind.Utc);
       // var dateFilter = DateTime.UtcNow.AddHours(-8);
-      // var result = await totemCollection.FindAsync(x=> x.recvTime > dateFilter);
+      var result = await totemCollection.FindAsync(x=> x.recvTime > dateFilter);
       
-      var result = await totemCollection.FindAsync(_ => true);
+      // var result = await totemCollection.FindAsync(_ => true);
 
       return result.ToList();
     }
