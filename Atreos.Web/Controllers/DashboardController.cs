@@ -9,9 +9,7 @@ namespace Atreos.Web.Controllers
     // GET
     public async Task<IActionResult> Index()
     {
-
-      var totemRepository = new TotemRepository();
-      var totens = await totemRepository.GetAllTotems();
+      
       return View();
     }
   }

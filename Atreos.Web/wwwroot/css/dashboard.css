@@ -1,13 +1,4 @@
-﻿p {
-    margin: 0;
-}
-
-body {
-    width: auto;
-    height: auto;
-}
-
-
+﻿
 .filtro-opcoes {
     display: flex;
     align-items: flex-end;
@@ -44,17 +35,12 @@ body {
     border-radius: 3px;
 }
 
-.media-horario {
+.container-media-horario {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    margin-bottom: 12px;
     gap: 10px;
-    position: absolute;
-    width: 359px;
-    height: 119px;
-    left: 775px;
-    top: 453px;
     background: #FFFFFF;
     border-radius: 3px;
 }
@@ -63,57 +49,29 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px;
     gap: 10px;
-    width: 339px;
-    height: 69px;
-
-    flex: none;
-    order: 1;
     align-self: stretch;
-    flex-grow: 0;
 }
-
-.h-matutino {
-    box-sizing: border-box;
-
+.horario {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 10px;
     gap: 4px;
-    width: 164.5px;
-    height: 69px;
-
     background: #FFFFFF;
-
     border: 1px solid #D1D5DA;
     border-radius: 3px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
 }
 
-.h-noturno {
-    box-sizing: border-box;
 
+.container-chart{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 10px;
-    gap: 4px;
-    width: 164.5px;
-    height: 69px;
+}
+.container-chart-frequencia, .container-chart-disciplina{
+    width: 100%;
+}
 
-    background: #FFFFFF;
-
-    border: 1px solid #D1D5DA;
-    border-radius: 3px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 1;
+#chartFrequencia, #chartDisciplina{
+    width: 100%;
 }

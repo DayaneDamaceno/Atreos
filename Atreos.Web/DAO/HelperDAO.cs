@@ -25,23 +25,7 @@ namespace Atreos.Web.DAO
             sessao.Close();
         }
 
-        public DataTable SqlComandoQuery(string queryString)
-        {
-            Conexao con = new Conexao();
-
-            var sessao = con.GetConexao();
-
-            DataTable tabela = new DataTable();
-
-            using (SqlDataAdapter adapter = new SqlDataAdapter(queryString, sessao))
-            {
-                adapter.Fill(tabela);
-            }
-
-            sessao.Close();
-
-            return tabela;
-        }
+       
 
         public DataTable SqlComandoQuery(string queryString, SqlParameter[] parametros)
         {
@@ -62,6 +46,23 @@ namespace Atreos.Web.DAO
             return tabela;
         }
         */
+        public DataTable SqlComandoQuery(string queryString)
+        {
+            var con = new Conexao();
+
+            var sessao = con.GetConexao();
+
+            var tabela = new DataTable();
+
+            using (var adapter = new SqlDataAdapter(queryString, sessao))
+            {
+                adapter.Fill(tabela);
+            }
+
+            sessao.Close();
+
+            return tabela;
+        }
         public void SQLComandoNoQuerySP(string queryString, SqlParameter[] parametros)
         {
             Conexao con = new Conexao();

@@ -11,5 +11,12 @@ namespace Atreos.Web.Models
         public AlunoViewModel Aluno { get; set; }
         public TotemViewModel Totem{ get; set; }
         public DateTime DataPresenca { get; set; }
+        
+        public PresencaViewModel()
+        {
+            Disciplina = new DisciplinaViewModel();
+            Aluno = new AlunoViewModel();
+            Totem = new TotemViewModel();
+        }
     }
 }

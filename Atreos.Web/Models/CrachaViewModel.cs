@@ -7,7 +7,12 @@ namespace Atreos.Web.Models
 {
     public class CrachaViewModel : PadraoViewModel
     {
+
         public AlunoViewModel Aluno{ get; set; }
         public string HexaDec{ get; set; }
+        public CrachaViewModel()
+        {
+            Aluno = new AlunoViewModel();
+        }
     }
 }
