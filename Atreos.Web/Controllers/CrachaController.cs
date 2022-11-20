@@ -21,10 +21,10 @@ namespace Atreos.Web.Controllers
         }
         public IActionResult Associar(CrachaViewModel cracha)
         {
-            AlunoDAO ra = new AlunoDAO();
-            AlunoViewModel aluno = ra.CapturarRa(cracha.Aluno.RA);
+            var ra = new AlunoDAO();
+            var aluno = ra.CapturarRa(cracha.Aluno.RA);
 
-            CrachaDAO cadastrar = new CrachaDAO();
+            var cadastrar = new CrachaDAO();
 
             if (aluno != null)
             {
@@ -38,12 +38,12 @@ namespace Atreos.Web.Controllers
         }
         public IActionResult Editar(int id)
         {
-            CrachaViewModel cracha = new CrachaViewModel();
+            var cracha = new CrachaViewModel();
 
-            CrachaDAO editar= new CrachaDAO();
+            var editar= new CrachaDAO();
             cracha = editar.CapturarId(id);
 
-            AlunoDAO capturar = new AlunoDAO();
+            var capturar = new AlunoDAO();
             cracha.Aluno = capturar.CapturarId(cracha.Aluno.Id); 
             
             return View("Editar", cracha);
