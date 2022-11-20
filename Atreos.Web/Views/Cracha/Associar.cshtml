@@ -7,18 +7,18 @@
 
 <h3>Associe um crachá a um aluno</h3>
 <p>Preencha os campos abaixo</p>
+<form method="post" action="Associar">
+    <div class="w-100 d-flex flex-column gap-2 my-2">
+        <div class="w-50">
+            <label class="form-label">RA do Aluno</label>
+            <input type="text" class="form-control" name="Aluno.RA">
+        </div>
 
-<div class="w-100 d-flex flex-column gap-2 my-2">
-    <div class="w-50">
-        <label class="form-label">RA do Aluno</label>
-        <input type="text" class="form-control">
+        <div class="w-50">
+            <label>Código do crachá</label>
+            <input type="text" class="form-control" name="HexaDec">
+        </div>
     </div>
-
-    <div class="w-50">
-        <label>Código do crachá</label>
-        <input type="text" class="form-control">
-    </div>
-</div>
-
-<a role="button" class="btn btn-primary"asp-controller="Cracha"asp-action="Index">Associar</a>
-<a role="button" class="btn btn-secondary"asp-controller="Cracha"asp-action="Index">Voltar</a>
+    <input type="submit" class="btn btn-secondary" value="Associar">
+    <a role="button" class="btn btn-secondary" asp-controller="Cracha" asp-action="Index">Voltar</a>
+</form>

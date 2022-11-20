@@ -19,7 +19,7 @@ namespace Atreos.Web.DAO
         {
             SqlParameter[] p = new SqlParameter[6];
 
-            p[0] = new SqlParameter("id_disciplina", disciplina.Id);
+            p[0] = new SqlParameter("id", disciplina.Id);
             p[1] = new SqlParameter("id_professor", disciplina.Professor.Id);
             p[2] = new SqlParameter("nome", disciplina.Nome);
             p[3] = new SqlParameter("horario", disciplina.Horario);

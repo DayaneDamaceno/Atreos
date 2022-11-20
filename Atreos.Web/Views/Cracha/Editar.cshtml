@@ -8,17 +8,19 @@
 <h3>Edite as informações do crachá</h3>
 <p>Preencha os campos abaixo</p>
 
-<div class="w-100 d-flex flex-column gap-2 my-2">
-    <div class="w-50">
-        <label class="form-label">RA do Aluno</label>
-        <input type="text" class="form-control">
+<form method="post" action="Salvar">
+    <div class="w-100 d-flex flex-column gap-2 my-2">
+        <div class="w-50">
+            <label class="form-label">RA do Aluno</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="w-50">
+            <label>Código do crachá</label>
+            <input type="text" class="form-control">
+        </div>
     </div>
 
-    <div class="w-50">
-        <label>Código do crachá</label>
-        <input type="text" class="form-control">
-    </div>
-</div>
-
-<a role="button" class="btn btn-primary" asp-controller="Cracha" asp-action="Index">Associar</a>
-<a role="button" class="btn btn-secondary" asp-controller="Cracha" asp-action="Index">Voltar</a>
+    <!-- <a role="button" class="btn btn-primary" asp-controller="Cracha" asp-action="Index">Associar</a> -->
+    <a role="button" class="btn btn-secondary" asp-controller="Cracha" asp-action="Index">Voltar</a>
+</form>

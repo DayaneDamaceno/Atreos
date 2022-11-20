@@ -19,7 +19,7 @@ namespace Atreos.Web.DAO
         {
             SqlParameter[] p = new SqlParameter[3];
             
-            p[0] = new SqlParameter("id_cracha", cracha.Id);
+            p[0] = new SqlParameter("id", cracha.Id);
             p[1] = new SqlParameter("id_aluno", cracha.Aluno.Id);
             p[2] = new SqlParameter("cod_hexaDec", cracha.HexaDec);
             
@@ -31,10 +31,15 @@ namespace Atreos.Web.DAO
         {
             CrachaViewModel itemCracha = new CrachaViewModel();
 
+            AlunoViewModel itemAluno = new AlunoViewModel();
+
+            itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
+            itemAluno.RA = registro["ra"].ToString();
+            itemAluno.Nome = registro["nome"].ToString();
+
             itemCracha.Id = Convert.ToInt32(registro["id_cracha"]);
             itemCracha.HexaDec = registro["cod_hexaDec"].ToString();
-            itemCracha.Aluno.Id = Convert.ToInt32(registro["id_aluno"]);
-
+            itemCracha.Aluno = itemAluno;
 
             return itemCracha;
         }

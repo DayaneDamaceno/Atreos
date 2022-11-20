@@ -26,6 +26,20 @@ namespace Atreos.Web.DAO
             return p;
         }
 
+        public AlunoViewModel CapturarRa(string ra)
+        {
+            HelperDAO list = new HelperDAO();
+
+            DataTable tabela = list.SQLComandoQuerySP("spSelect_RA", new SqlParameter[] { new SqlParameter("@ra", ra) });
+
+            if (tabela.Rows.Count > 0)
+            {
+                return MontaModel(tabela.Rows[0]);
+            }
+
+            return null;
+        }
+
         protected override AlunoViewModel MontaModel(DataRow registro)
         {
             AlunoViewModel itemAluno = new AlunoViewModel();
