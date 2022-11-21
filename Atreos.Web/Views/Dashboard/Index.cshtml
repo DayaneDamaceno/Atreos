@@ -6,26 +6,22 @@
 <link rel="stylesheet" href="~/css/dashboard.css"/>
 <script src="js/pages/Dashboard/Index.js"></script>
 <div class="container-media-horario">
-    <h5>Média do horário de entrada</h5>
+    <h5>Média do horário de entrada semestral</h5>
     <div class="horarios">
         <div class="horario">
-            <label>1º Aula</label>
+            <label>Horário</label>
             <h5>19:03</h5>
-        </div>
-        <div class="horario">
-            <label>2º Aula</label>
-            <h5>21:00</h5>
         </div>
     </div>
 </div>
 <div class="container-chart">
     <div class="container-chart-frequencia">
-         <h5>Frequência/dias dos alunos</h5>
+         <h5>Presença/dia dos Alunos</h5>
         <canvas id="chartFrequencia"></canvas>
     </div>
 
     <div class="container-chart-disciplina">
-         <h5>Frequência por disciplina</h5>
+         <h5>Frequência por disciplina no Semestre</h5>
         <canvas id="chartDisciplina"></canvas>
     </div>
 </div>
@@ -43,7 +39,7 @@
     data: {
       labels: xValues,
       datasets: [{
-        label: "Frequência (%)",
+        label: "Presença",
         fill: false,
         lineTension: 0,
         backgroundColor: "#9747FF",
