@@ -10,7 +10,7 @@ namespace Atreos.Web.DAO
     {
         public SqlConnection GetConexao()
         {
-            var banco = "Server=atum.database.windows.net;uid=atumm;pwd=1bfd02c92*;database=SQL";
+            const string banco = "Server=atum.database.windows.net;uid=atumm;pwd=1bfd02c92*;database=SQL";
             var con = new SqlConnection(banco);
             con.Open();
 

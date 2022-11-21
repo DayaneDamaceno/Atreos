@@ -1,12 +1,6 @@
-﻿p {
-    margin: 0;
+﻿#imgPreview{
+    border-radius: 100px;
 }
-
-body {
-    width: auto;
-    height: auto;
-}
-
 .cadastroAlunos-bg {
     display: flex;
     flex-direction: column;
@@ -77,19 +71,10 @@ titulo-subtitulo p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 12px;
-    width: 100px;
-    height: 91px;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 aluno-foto p {
-    width: 100px;
-    height: 19px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -98,31 +83,18 @@ aluno-foto p {
 
     color: #000000;
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 aluno-foto img {
     width: 60px;
     height: 60px;
 
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
 .cadastroAlunos-nome {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
-    width: 368px;
-    height: 70px;
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 cadastroAlunos-nome label{
     width: 115px;
@@ -135,9 +107,6 @@ cadastroAlunos-nome label{
 
     color: #000000;
 
-    flex: none;
-    order: 0;
-    flex-grow: 0;
 }
 
 .nome-cadastro {

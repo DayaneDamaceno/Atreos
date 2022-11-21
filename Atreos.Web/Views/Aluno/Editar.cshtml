@@ -7,13 +7,22 @@
 <h3>Edite os dados do aluno</h3>
 <p>Preencha os campos abaixo</p>
 
-<form>
+<form method="post"  enctype="multipart/form-data">
     <input type="hidden" name="Id" value="@Model.Id" />
 
     <div class="w-100 d-flex flex-column gap-2 my-2">
         <div class="aluno-foto">
             <p>Foto do Aluno</p>
-            <img src="~/Images/foto-holder.svg" />
+            @if (string.IsNullOrEmpty(Model.ImagemEmBase64))
+            {
+                <img id="imgPreview" class="img-responsive" width="100" style=" border-radius: 100px; "/>
+            }
+            else
+            {
+                <input type="hidden" name="ImagemEmBase64" value="@Model.ImagemEmBase64" />
+                <img id="imgPreview" class="img-responsive" src="data:image/jpeg;base64,@Model.ImagemEmBase64" width="100" style=" border-radius: 100px; "/>
+            }
+            <input type="file" name="Imagem" id="Imagem" onchange="exibirImagem()" class="btn btn-secondary" value="@Model.Imagem">
         </div>
 
         <div class="w-50">
@@ -32,3 +41,13 @@
     <a role="button" class="btn btn-primary" asp-controller="Aluno" asp-action="Index">Voltar</a>
 
 </form>
+
+<script>
+ function exibirImagem() {
+     var oFReader = new FileReader();
+     oFReader.readAsDataURL(document.getElementById("Imagem").files[0]);
+     oFReader.onload = function (oFREvent) {
+        document.getElementById("imgPreview").src = oFREvent.target.result;
+     };
+ }
+</script>

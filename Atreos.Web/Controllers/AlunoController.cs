@@ -27,6 +27,10 @@ namespace Atreos.Web.Controllers
             }
             else
             {
+                if (aluno.Imagem != null)
+                {
+                    aluno.ImagemEmByte = ConvertImageToByte(aluno.Imagem);
+                }
                 AlunoDAO cadastrar = new AlunoDAO();
                 cadastrar.Cadastrar(aluno);
                 return View("Index", cadastrar.List());
@@ -35,7 +39,7 @@ namespace Atreos.Web.Controllers
         }
         public IActionResult Cadastro()
         {
-            return View("Cadastro", new AlunoViewModel());
+            return View("Cadastro");
         }
         public IActionResult Editar(int id)
         {
@@ -53,6 +57,10 @@ namespace Atreos.Web.Controllers
             }
             else
             {
+                if (aluno.Imagem != null)
+                {
+                    aluno.ImagemEmByte = ConvertImageToByte(aluno.Imagem);
+                }
                 var salvar = new AlunoDAO();
                 salvar.Atualizar(aluno);
 
@@ -80,6 +88,17 @@ namespace Atreos.Web.Controllers
                 ModelState.AddModelError("RA", "O RA deve ser um número.");
             }
                 
+        }
+        public byte[] ConvertImageToByte(IFormFile file)
+        {
+            if (file != null)
+                using (var ms = new MemoryStream())
+                {
+                    file.CopyTo(ms);
+                    return ms.ToArray();
+                }
+            else
+                return null;
         }
     }
 }
