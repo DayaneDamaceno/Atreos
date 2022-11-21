@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Atreos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cuprum&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/boxicons/css/boxicons.min.css" />
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="stylesheet" href="~/css/reset-bootstrap.css" />
+
+</head>
+
+
+<body>
+    <div class="background-login">
+        <div class="login-logo">
+            <img src="~/Images/logo.svg" />
+            <img src="~/Images/logo-name.svg" />
+        </div>
+        <div class="ilustra-login">
+            <img src="~/Images/ilustracao_login.svg" />
+        </div>
+    </div>
+    <div class="descricao">
+        <p>Aplicação responsável por centralizar a presença dos alunos da instituição</p>
+    </div>
+
+
+    <div class="login-form">
+        <div class="ti-subti">
+            <h5>Entre com sua conta</h5>
+            <p>Preencha as informações abaixo</p>
+        </div>
+        <div class="login-campos">
+            <div class="login-ra">
+                <label>Nome</label>
+                <input type="text" class="campo-ra" />
+            </div>
+            <div class="login-senha">
+                <label>Senha</label>
+                <input type="password" class="campo-senha" />
+            </div>
+        </div>
+
+        <a role="button" class="btn-login" asp-controller="Dashboard" asp-action="Index">Acessar</a>
+    </div>
+</body>
