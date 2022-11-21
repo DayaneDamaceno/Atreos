@@ -19,13 +19,23 @@ namespace Atreos.Web.Controllers
         
         public IActionResult Cadastrar(AlunoViewModel aluno)
         {
-            AlunoDAO cadastrar = new AlunoDAO();
-            cadastrar.Cadastrar(aluno);
-            return View("Index", cadastrar.List());
+            ValidaDados(aluno);
+
+            if (!ModelState.IsValid)
+            {
+                return View("Cadastro", aluno);
+            }
+            else
+            {
+                AlunoDAO cadastrar = new AlunoDAO();
+                cadastrar.Cadastrar(aluno);
+                return View("Index", cadastrar.List());
+            }
+
         }
         public IActionResult Cadastro()
         {
-            return View("Cadastro");
+            return View("Cadastro", new AlunoViewModel());
         }
         public IActionResult Editar(int id)
         {
@@ -35,10 +45,19 @@ namespace Atreos.Web.Controllers
         }
         public IActionResult Salvar(AlunoViewModel aluno)
         {
-            var salvar = new AlunoDAO();
-            salvar.Atualizar(aluno);
+            ValidaDados(aluno);
 
-            return View("Index", salvar.List());
+            if (!ModelState.IsValid)
+            {
+                return View("Editar", aluno);
+            }
+            else
+            {
+                var salvar = new AlunoDAO();
+                salvar.Atualizar(aluno);
+
+                return View("Index", salvar.List());
+            }
         }
         public IActionResult Deletar(int id)
         {
@@ -46,6 +65,21 @@ namespace Atreos.Web.Controllers
             deletar.Deletar(id);
 
             return View("Index", deletar.List());
+        }
+        protected void ValidaDados(AlunoViewModel aluno)
+        {
+            if (string.IsNullOrEmpty(aluno.Nome))
+                ModelState.AddModelError("Nome", "Preencha o nome.");
+            if (aluno.RA == null || aluno.RA.Length != 9)
+                ModelState.AddModelError("RA", "O RA deve ter 9 caracteres númericos.");
+            try
+            {
+                int i = Convert.ToInt32(aluno.RA);
+            }catch
+            {
+                ModelState.AddModelError("RA", "O RA deve ser um número.");
+            }
+                
         }
     }
 }

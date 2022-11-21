@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProfessorViewModel
+@{
     ViewData["Title"] = "Cadastrar Novo Professor";
 }
 <link rel="stylesheet" href="~/css/cadastroProfessores.css" />
@@ -11,6 +12,7 @@
         <div class="w-50">
             <label>Nome Completo</label>
             <input type="text" class="form-control" name="Nome">
+            <span asp-validation-for="Nome" class="text-danger"></span>
         </div>
     </div>
 

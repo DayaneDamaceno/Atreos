@@ -18,9 +18,18 @@ namespace Atreos.Web.Controllers
         }
         public IActionResult Cadastrar(ProfessorViewModel prof)
         {
-            ProfessorDAO cadastrar = new ProfessorDAO();
-            cadastrar.Cadastrar(prof);
-            return View("Index", cadastrar.List());
+            ValidaDados(prof);
+
+            if (!ModelState.IsValid)
+            {
+                return View("Cadastro", prof);
+            }
+            else
+            {
+                ProfessorDAO cadastrar = new ProfessorDAO();
+                cadastrar.Cadastrar(prof);
+                return View("Index", cadastrar.List());
+            }
         }
         public IActionResult Cadastro()
         {
@@ -35,10 +44,19 @@ namespace Atreos.Web.Controllers
 
         public IActionResult Salvar(ProfessorViewModel prof)
         {
-            ProfessorDAO salvar = new ProfessorDAO();
-            salvar.Atualizar(prof);
+            ValidaDados(prof);
 
-            return View("Index", salvar.List());
+            if (!ModelState.IsValid)
+            {
+                return View("Editar", prof);
+            }
+            else
+            {
+                ProfessorDAO salvar = new ProfessorDAO();
+                salvar.Atualizar(prof);
+
+                return View("Index", salvar.List());
+            }
         }
 
         public IActionResult Deletar(int id)
@@ -47,6 +65,12 @@ namespace Atreos.Web.Controllers
             deletar.Deletar(id);
 
             return View("Index", deletar.List());
+        }
+
+        protected void ValidaDados(ProfessorViewModel prof)
+        {
+            if (string.IsNullOrEmpty(prof.Nome))
+                ModelState.AddModelError("Nome", "Preencha o nome.");
         }
     }
 }

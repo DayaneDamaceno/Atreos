@@ -1,4 +1,5 @@
-﻿@{
+﻿@model CrachaViewModel
+@{
     ViewData["Title"] = "Associar Cracha";
 }
 <link rel="stylesheet" href="~/css/cadastroCracha.css" />
@@ -11,12 +12,14 @@
     <div class="w-100 d-flex flex-column gap-2 my-2">
         <div class="w-50">
             <label class="form-label">RA do Aluno</label>
-            <input type="text" class="form-control" name="Aluno.RA">
+            <input type="text" class="form-control" name="Aluno.RA" value="@Model.Aluno.RA">
+            <span asp-validation-for="Aluno.RA" class="text-danger"></span>
         </div>
 
         <div class="w-50">
             <label>Código do crachá</label>
-            <input type="text" class="form-control" name="HexaDec">
+            <input type="text" class="form-control" name="HexaDec" value="@Model.HexaDec">
+            <span asp-validation-for="HexaDec" class="text-danger"></span>
         </div>
     </div>
     <input type="submit" class="btn btn-secondary" value="Associar">
