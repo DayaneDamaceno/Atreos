@@ -18,7 +18,14 @@
     <div class="card-aluno">
         <div class="detalhes-container">
             <div class="foto-aluno">
-                <img src="~/Images/fotomodelo.svg"/>
+                @if (string.IsNullOrEmpty(item.ImagemEmBase64))
+                {
+                    <img src="~/Images/fotomodelo.svg"/>
+                }
+                else
+                {
+                    <img id="imgPreview" src="data:image/jpeg;base64,@item.ImagemEmBase64" class="img-responsive" width="40" style=" border-radius: 100px; "/>
+                }
             </div>
             <div class="aluno-detalhe">
                 <p>

@@ -3,8 +3,10 @@ using Atreos.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace Atreos.Web.Controllers
 {
@@ -19,6 +21,10 @@ namespace Atreos.Web.Controllers
         
         public IActionResult Cadastrar(AlunoViewModel aluno)
         {
+            if (aluno.Imagem != null)
+            {
+                aluno.ImagemEmByte = ConvertImageToByte(aluno.Imagem);
+            }
             AlunoDAO cadastrar = new AlunoDAO();
             cadastrar.Cadastrar(aluno);
             return View("Index", cadastrar.List());
@@ -35,10 +41,24 @@ namespace Atreos.Web.Controllers
         }
         public IActionResult Salvar(AlunoViewModel aluno)
         {
+            if (aluno.Imagem != null)
+            {
+                aluno.ImagemEmByte = ConvertImageToByte(aluno.Imagem);
+            }
             var salvar = new AlunoDAO();
             salvar.Atualizar(aluno);
-
             return View("Index", salvar.List());
+        }
+        public byte[] ConvertImageToByte(IFormFile file)
+        {
+            if (file != null)
+                using (var ms = new MemoryStream())
+                {
+                    file.CopyTo(ms);
+                    return ms.ToArray();
+                }
+            else
+                return null;
         }
     }
 }
