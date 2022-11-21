@@ -8,52 +8,59 @@ using System.Threading.Tasks;
 
 namespace Atreos.Web.DAO
 {
-    public class CrachaDAO : PadraoDAO<CrachaViewModel>
+  public class CrachaDAO : PadraoDAO<CrachaViewModel>
+  {
+    protected override string SqlSelect { get; set; } = "spSelect_Cracha";
+    protected override string SqlInsert { get; set; } = "spInsert_Cracha";
+    protected override string SqlUpdate { get; set; } = "spUpdate_Cracha";
+    protected override string SqlDelete { get; set; } = "spDelete_Cracha";
+    protected override string SqlSelectId { get; set; } = "spSelect_Cracha";
+
+    protected override SqlParameter[] CriaParametros(CrachaViewModel cracha)
     {
-        protected override string SqlSelect { get; set; } = "spSelect_Cracha";
-        protected override string SqlInsert { get; set; } = "spInsert_Cracha";
-        protected override string SqlUpdate { get; set; } = "spUpdate_Cracha";
-        protected override string SqlDelete { get; set; } = "spDelete_Cracha";
-        protected override string SqlSelectId { get; set; } = "spSelect_Cracha";
-        protected override SqlParameter[] CriaParametros(CrachaViewModel cracha)
-        {
-            SqlParameter[] p = new SqlParameter[3];
-            
-            p[0] = new SqlParameter("id", cracha.Id);
-            p[1] = new SqlParameter("id_aluno", cracha.Aluno.Id);
-            p[2] = new SqlParameter("cod_hexaDec", cracha.HexaDec);
-            
-            return p;
-            
-        }
+      SqlParameter[] p = new SqlParameter[3];
 
-        protected override CrachaViewModel MontaModel(DataRow registro)
-        {
-            var itemCracha = new CrachaViewModel();
-            var itemAluno = new AlunoViewModel();
+      p[0] = new SqlParameter("id", cracha.Id);
+      p[1] = new SqlParameter("id_aluno", cracha.Aluno.Id);
+      p[2] = new SqlParameter("cod_hexaDec", cracha.HexaDec);
 
-            itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
-            itemAluno.Nome = registro["nome"].ToString();
-            itemAluno.RA = registro["ra"].ToString();
-            itemCracha.Id = Convert.ToInt32(registro["id_cracha"]);
-            itemCracha.HexaDec = registro["cod_hexaDec"].ToString();
-            itemCracha.Aluno = itemAluno;
-
-            return itemCracha;
-        }
-        
-        public List<CrachaViewModel> ObterAlunosComPresencaPendente(List<string> crachas)
-        {
-            var helperDao = new HelperDAO();
-            var alunos = new List<CrachaViewModel>();
-
-            var sql = $"select * from Cracha where cod_hexaDec in ('{string.Join("','", crachas)}')";
-            var alunosTable = helperDao.SqlComandoQuery(sql);
-
-            if (alunosTable.Rows.Count <= 0) return null;
-            
-            alunos.AddRange(from DataRow registro in alunosTable.Rows select MontaModel(registro));
-            return alunos;
-        }
+      return p;
     }
+
+    protected override CrachaViewModel MontaModel(DataRow registro)
+    {
+      var itemCracha = new CrachaViewModel();
+      var itemAluno = new AlunoViewModel();
+
+      itemAluno.Id = Convert.ToInt32(registro["id_aluno"]);
+      if (registro.Table.Columns.Contains("nome"))
+      {
+        itemAluno.Nome = registro["nome"].ToString();
+      }
+      if (registro.Table.Columns.Contains("ra"))
+      {
+        itemAluno.RA = registro["ra"].ToString();
+      }
+
+      itemCracha.Id = Convert.ToInt32(registro["id_cracha"]);
+      itemCracha.HexaDec = registro["cod_hexaDec"].ToString();
+      itemCracha.Aluno = itemAluno;
+
+      return itemCracha;
+    }
+
+    public List<CrachaViewModel> ObterAlunosComPresencaPendente(List<string> crachas)
+    {
+      var helperDao = new HelperDAO();
+      var alunos = new List<CrachaViewModel>();
+
+      var sql = $"select * from Cracha where cod_hexaDec in ('{string.Join("','", crachas)}')";
+      var alunosTable = helperDao.SqlComandoQuery(sql);
+
+      if (alunosTable.Rows.Count <= 0) return null;
+
+      alunos.AddRange(from DataRow registro in alunosTable.Rows select MontaModel(registro));
+      return alunos;
+    }
+  }
 }

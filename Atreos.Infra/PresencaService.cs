@@ -33,6 +33,9 @@ namespace Atreos.Infra
       {
         var crachas = totens.Select(t => t.attrValue.Trim()).Distinct().ToList();
         var idsDosAlonoComPresencaPendente = _crachaDao.ObterAlunosComPresencaPendente(crachas);
+        if (idsDosAlonoComPresencaPendente == null)
+           return;
+        
         var disciplinaAtual = _disciplinaDao.ObterDisciplinaAtual();
 
         foreach (var aluno in idsDosAlonoComPresencaPendente)
