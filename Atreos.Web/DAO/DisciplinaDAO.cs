@@ -51,15 +51,15 @@ namespace Atreos.Web.DAO
         {
             // var now = new TimeSpan(22, 30, 45);
             var now = DateTime.Now.TimeOfDay;
-            // var startFirstClass = TimeSpan.Parse("19:15:00.000");
-            // var endFirstClass = TimeSpan.Parse("20:55:00.000");
-            // var startSecondClass = TimeSpan.Parse("21:05:00.000");
-            // var endSecondClass = TimeSpan.Parse("22:45:00.000");
-
-            var startFirstClass = TimeSpan.Parse("13:00:00.000");
-            var endFirstClass = TimeSpan.Parse("19:00:00.000");
+            var startFirstClass = TimeSpan.Parse("19:00:00.000");
+            var endFirstClass = TimeSpan.Parse("20:55:00.000");
             var startSecondClass = TimeSpan.Parse("21:05:00.000");
             var endSecondClass = TimeSpan.Parse("22:45:00.000");
+
+            // var startFirstClass = TimeSpan.Parse("13:00:00.000");
+            // var endFirstClass = TimeSpan.Parse("19:00:00.000");
+            // var startSecondClass = TimeSpan.Parse("21:05:00.000");
+            // var endSecondClass = TimeSpan.Parse("22:45:00.000");
             
             var nowIsFirstClass = now > startFirstClass && now < endFirstClass;
             var nowIsSecondClass = now > startSecondClass && now < endSecondClass;

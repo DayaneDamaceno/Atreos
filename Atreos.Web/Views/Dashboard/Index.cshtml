@@ -1,3 +1,4 @@
+@model DashboardViewModel;
 @{
     ViewData["Title"] = "Dashboard";
 }
@@ -10,127 +11,105 @@
     <div class="horarios">
         <div class="horario">
             <label>Horário</label>
-            <h5>19:03</h5>
+            <h5>@Model.MediaHorarioEntrada?.ToString("HH:mm")</h5>
         </div>
     </div>
 </div>
 <div class="container-chart">
     <div class="container-chart-frequencia">
-         <h5>Presença/dia dos Alunos</h5>
+        <h5>Presença/dia dos Alunos</h5>
         <canvas id="chartFrequencia"></canvas>
     </div>
 
     <div class="container-chart-disciplina">
-         <h5>Frequência por disciplina no Semestre</h5>
+        <h5>Frequência por disciplina no Semestre</h5>
         <canvas id="chartDisciplina"></canvas>
     </div>
 </div>
 
+@Html.Hidden("CarregarDashboard", Url.Action("CarregarDashboard", "Dashboard"))
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-  // var xValues = [0, 5, 10, 15, 20, 25, 30];
-  var xValues = [0, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23,24,25,26,27,28,29,30, 31];
-  var yValues = [0, 15, 25, 40, 55, 70, 85, 100];
-  var data = [0, 22, 34,19, 32,39,0,0, 25, 40, 30, 38, 34,0, 0,34,36,15, 25, 40,0, 0, 34,20, 24,26,30,0, 0, 40, 39 ];
-  
-  new Chart("chartFrequencia", {
-    type: "line",
-    data: {
-      labels: xValues,
-      datasets: [{
-        label: "Presença",
-        fill: false,
-        lineTension: 0,
-        backgroundColor: "#9747FF",
-        borderColor: "rgba(151, 71, 255, 0.83)",
-        data: data
-      }]
-    },
-    options: {
-      legend: {display: false},
-       responsive: true,
-      scales: {
-        yAxes: [{ticks: {min: 0, max:100}}],
-      }
+    document.addEventListener("DOMContentLoaded", function (event) {
+        carregarDash();
+
+    });
+    function carregarDash() {
+                let urlcarregarDashBoard = $('#CarregarDashboard').val();
+                return $.ajax({
+                    url: urlcarregarDashBoard,
+                    
+                    contentType: "application/json; charset=utf-8",
+                    type: "GET",
+                    success: (response) => {
+                        const res = JSON.parse(JSON.stringify(response));
+                        
+                        console.log(res)
+                        
+                        let dadosDisciplina = {
+                            yValues: res.frequenciaPorDisciplina.disciplinas,
+                            data: res.frequenciaPorDisciplina.porcentagens
+                        }
+                        let dadosFrequencia = {
+                            xValues: res.presencaPorDiaNoMes.diasDoMes,
+                            data: res.presencaPorDiaNoMes.totalPorDia
+                        }
+                        console.log(dadosFrequencia)
+                        console.log(dadosDisciplina)
+                       
+                        popularChartFrequencia(dadosFrequencia)    
+                        popularChartDisciplina(dadosDisciplina)    
+                        
+                    }
+                });
+            }
+
+    function popularChartFrequencia(dados){
+      new Chart("chartFrequencia", {
+        type: "line",
+        data: {
+          labels: dados.xValues,
+          datasets: [{
+            label: "Presença",
+            fill: false,
+            lineTension: 0,
+            backgroundColor: "#9747FF",
+            borderColor: "rgba(151, 71, 255, 0.83)",
+            data: dados.data
+          }]
+        },
+        options: {
+          legend: {display: false},
+           responsive: true,
+          scales: {
+            yAxes: [{ticks: {min: 0, max:100}}],
+          }
+        }
+      });
     }
-  });
+    
+    function popularChartDisciplina(dados){
+        new Chart("chartDisciplina", {
+          type: "bar",
+          data: {
+            labels: dados.yValues,
+            datasets: [{
+              label: "Frequência (%)",
+              backgroundColor: "#EA4AAA",
+              data: dados.data,
+              borderWidth: 2,
+              borderRadius: Number.MAX_VALUE,
+              borderSkipped: false,
+            }]
+          },
+          options: {
+            indexAxis: 'y',
+            responsive: true,
+          }
+        });
+    }
+  
 </script>
 
-<script>
-var xValues = ["Banco de Dados", "Linguagem de Programação", "Fenomenos de transporte", "Sistemas Microcontroladores", "Gestão de Projetos"];
-var yValues = [55, 49, 44, 24, 15];
-
-new Chart("chartDisciplina", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      label: "Frequência (%)",
-      backgroundColor: "#EA4AAA",
-      data: yValues,
-      borderWidth: 2,
-      borderRadius: Number.MAX_VALUE,
-      borderSkipped: false,
-    }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-  }
-});
-</script>
-
-@* *@
-@* <div class="filtro-dashboard"> *@
-@*     <h3>Filtros:</h3> *@
-@*     <div class="filtro-opcoes"> *@
-@*         <div class="w-50"> *@
-@*             <label class="form-label">Curso</label> *@
-@*             <select class="form-select"> *@
-@*                 <option selected>Selecione um Curso</option> *@
-@*                 <option value="1">One</option>  *@
-@*                 <option value="2">Two</option> *@
-@*                 <option value="3">Three</option> *@
-@*             </select> *@
-@*         </div> *@
-@*         <div class="w-50"> *@
-@*             <label class="form-label">Disciplina</label> *@
-@*             <select class="form-select"> *@
-@*                 <option selected>Selecione uma Disciplina</option> *@
-@*                 <option value="1">One</option> *@
-@*                 <option value="2">Two</option> *@
-@*                 <option value="3">Three</option> *@
-@*             </select> *@
-@*         </div> *@
-@*         <div class="w-50"> *@
-@*             <label>RA</label> *@
-@*             <input type="text" class="form-control"> *@
-@*         </div> *@
-@*         <a role="button" class="btn btn-primary">Buscar</a> *@
-@*     </div> *@
-@* </div> *@
-@* *@
-@* <div class="dashboards-info"> *@
-@*     <div class="grafico"> *@
-@*         <h5>Frequência/dias dos alunos</h5> *@
-@*         <img src="~/Images/freq_dia.svg" /> *@
-@*     </div> *@
-@*     <div class="barras"> *@
-@*         <h5>Frequência por Disciplina</h5> *@
-@*         <img src="~/Images/barras.svg" /> *@
-@*     </div> *@
-@*     <div class="media-horario"> *@
-@*         <h5>Média do horário de entrada</h5> *@
-@*         <div class="horarios"> *@
-@*             <div class="h-matutino"> *@
-@*                 <label>Periodo Matutino</label> *@
-@*                 <h5>07:24</h5> *@
-@*             </div> *@
-@*             <div class="h-noturno"> *@
-@*                 <label>Periodo Noturno</label> *@
-@*                 <h5>18:54</h5> *@
-@*             </div> *@
-@*         </div> *@
-@*     </div> *@
-@* </div> *@
