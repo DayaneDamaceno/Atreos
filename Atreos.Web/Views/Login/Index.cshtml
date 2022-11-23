@@ -1,4 +1,5 @@
-﻿@{
+﻿@model UsuarioModel
+@{
     ViewData["Title"] = "Dashboard";
     Layout = null;
 }
@@ -19,37 +20,43 @@
 </head>
 
 
+
 <body>
-<div class="login">
-    <div class="info-aplicacao">
-        <img src="~/Images/full-logo.svg" class="logo" alt="logo" />
-        <img src="~/Images/ilustracao_login.svg" class="ilustracao" alt="ilustracao-login" />
-        
-        <p>Aplicação responsável por centralizar a presença dos alunos da instituição</p>
-    </div>
-    <div class="container-login">
-        <div class="login-form">
-            <div class="ti-subti">
-                <h5>Entre com sua conta</h5>
-                <p>Preencha as informações abaixo</p>
+    @if (TempData["MessageError"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" data-bs-dismiss="alert" aria-label="Close"></button>
+            @TempData["MessageError"]
+        </div>
+    }
+    <form asp-controller="Login" asp-action="Entrar" method="post">
+        <div class="login">
+            <div class="info-aplicacao">
+                <img src="~/Images/full-logo.svg" class="logo" alt="logo" />
+                <img src="~/Images/ilustracao_login.svg" class="ilustracao" alt="ilustracao-login" />
+
+                <p>Aplicação responsável por centralizar a presença dos alunos da instituição</p>
             </div>
-            <div class="login-campos">
-                <div class="login-ra">
-                    <label>Nome</label>
-                    <input type="text" class="campo-ra"/>
-                </div>
-                <div class="login-senha">
-                    <label>Senha</label>
-                    <input type="password" class="campo-senha"/>
+            <div class="container-login">
+                <div class="login-form">
+                    <div class="ti-subti">
+                        <h5>Entre com sua conta</h5>
+                        <p>Preencha as informações abaixo</p>
+                    </div>
+                    <div class="login-campos">
+                        <div class="login-ra">
+                            <label>Nome</label>
+                            <input type="text" asp-for="LoginUser" class="campo-ra" id="nome" />
+                        </div>
+                        <div class="login-senha">
+                            <label>Senha</label>
+                            <input type="password" asp-for="Senha" class="campo-senha" id="senha" />
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Acessar</button>
                 </div>
             </div>
-
-            <a role="button" class="btn-login" asp-controller="Dashboard" asp-action="Index">Acessar</a>
-        </div>  
-    </div>
-</div>
-
-
-
-
+        </div>
+    </form>
 </body>
