@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Atreos.Web.Controllers
 {
-    public class ProfessorController : Controller
+    public class ProfessorController : PadraoController<ProfessorViewModel>
     {
-        public IActionResult Index()
+        public override IActionResult Index()
         {
             ProfessorDAO listar = new ProfessorDAO();
 
@@ -67,7 +67,7 @@ namespace Atreos.Web.Controllers
             return View("Index", deletar.List());
         }
 
-        protected void ValidaDados(ProfessorViewModel prof)
+        protected override void ValidaDados(ProfessorViewModel prof)
         {
             if (string.IsNullOrEmpty(prof.Nome))
                 ModelState.AddModelError("Nome", "Preencha o nome.");

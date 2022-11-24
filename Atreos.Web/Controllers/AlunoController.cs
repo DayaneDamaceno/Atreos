@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Http;
 
 namespace Atreos.Web.Controllers
 {
-    public class AlunoController : Controller
+    public class AlunoController : PadraoController<AlunoViewModel>
     {
-        public IActionResult Index()
+        public override IActionResult Index()
         {
             AlunoDAO listar = new AlunoDAO();
             
@@ -76,7 +76,7 @@ namespace Atreos.Web.Controllers
 
             return View("Index", deletar.List());
         }
-        protected void ValidaDados(AlunoViewModel aluno)
+        protected override void ValidaDados(AlunoViewModel aluno)
         {
             if (string.IsNullOrEmpty(aluno.Nome))
                 ModelState.AddModelError("Nome", "Preencha o nome.");

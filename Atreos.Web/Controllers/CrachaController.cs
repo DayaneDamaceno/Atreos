@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace Atreos.Web.Controllers
 {
-    public class CrachaController : Controller
+    public class CrachaController : PadraoController<CrachaViewModel>
     {
         // GET
-        public IActionResult Index()
+        public override IActionResult Index()
         {
             CrachaDAO listar = new CrachaDAO();
             List<CrachaViewModel> lista = listar.List();
@@ -82,7 +82,7 @@ namespace Atreos.Web.Controllers
 
             return View("Cadastros", deletar.List());
         }
-        protected void ValidaDados(CrachaViewModel cracha)
+        protected override void ValidaDados(CrachaViewModel cracha)
         {
             AlunoDAO ra = new AlunoDAO();
 
